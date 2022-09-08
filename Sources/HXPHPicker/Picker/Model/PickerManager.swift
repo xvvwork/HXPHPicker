@@ -481,10 +481,10 @@ extension PickerManager {
 //        if singleVideo && photoAsset.mediaType == .video {
 //            return false
 //        }
-//        if config.selectMode == .single {
-//            // 单选模式不可添加
-//            return false
-//        }
+        if config.selectMode == .single && selectedAssetArray.count == 1 {
+            // 单选模式先移除
+            removePhotoAsset(photoAsset: selectedAssetArray.first!)
+        }
         if selectedAssetArray.contains(photoAsset) {
             photoAsset.isSelected = true
             return true
