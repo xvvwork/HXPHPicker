@@ -166,6 +166,9 @@ open class PhotoPickerView: UIView {
         }
         return collectionView
     }()
+    
+    public var didFetchAssetsCompletion: (([PhotoAsset], PhotoAsset?) -> Void)?
+    
     lazy var verticalLayout: PhotoPickerSwitchLayout = {
         let layout = PhotoPickerSwitchLayout()
         layout.scrollDirection = .vertical

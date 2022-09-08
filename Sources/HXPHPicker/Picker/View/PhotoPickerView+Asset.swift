@@ -126,6 +126,7 @@ extension PhotoPickerView {
         collectionView.reloadData()
         scrollToAppropriatePlace(photoAsset: photoAsset)
         hideLoading()
+        self.didFetchAssetsCompletion?(photoAssets, photoAsset)
         DispatchQueue.main.async {
             self.scrollViewDidScroll(self.collectionView)
         }

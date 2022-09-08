@@ -518,9 +518,9 @@ extension PickerManager {
         photoAsset.isSelected = false
         willDeselectAsset?(photoAsset, selectedAssetArray.count)
         if photoAsset.mediaType == .photo {
-            selectedPhotoAssetArray.remove(
-                at: selectedPhotoAssetArray.firstIndex(of: photoAsset)!
-            )
+            if let removeIndex = selectedPhotoAssetArray.firstIndex(of: photoAsset) {
+                selectedPhotoAssetArray.remove(at: removeIndex)
+            }
         }else if photoAsset.mediaType == .video {
             selectedVideoAssetArray.remove(
                 at: selectedVideoAssetArray.firstIndex(of: photoAsset)!

@@ -237,7 +237,9 @@ extension PhotoPickerView: UICollectionViewDelegate {
         if !photoAsset.isSelected {
             if !isMultipleSelect || (videoLoadSingleCell && photoAsset.mediaType == .video) {
                 if manager.canSelectAsset(for: photoAsset, showHUD: true) == true {
-                    manager.addedPhotoAsset(photoAsset: photoAsset)
+                    if let cell = getCell(for: photoAsset) as? PhotoPickerViewCell {
+                        self.cell(cell, didSelectControl: cell.isSelected)
+                    }
                     finishSelectionAsset([photoAsset])
                 }
             }else {

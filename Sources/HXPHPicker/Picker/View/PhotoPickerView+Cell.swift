@@ -61,6 +61,12 @@ extension PhotoPickerView: PhotoPickerViewCellDelegate {
                         animated: true
                     )
                     updateCellSelectedTitle()
+                }else {
+                    manager.removeSelectedAssets()
+                    cell.updateSelectedState(
+                        isSelected: true,
+                        animated: true
+                    )
                 }
             }
             let inICloud = cell.photoAsset.checkICloundStatus(
