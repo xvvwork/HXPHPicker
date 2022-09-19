@@ -408,6 +408,12 @@ public protocol PhotoPickerControllerDelegate: AnyObject {
         _ pickerController: PhotoPickerController,
         previewDismissComplete atIndex: Int
     )
+    
+    ///点击相册
+    func pickerController(
+           _ pickerController: PhotoPickerController,
+           didSelectCollection assetCollection: PhotoAssetCollection
+       )
 }
 
 public extension PhotoPickerControllerDelegate {
@@ -694,5 +700,10 @@ public extension PhotoPickerControllerDelegate {
     func pickerController(
         _ pickerController: PhotoPickerController,
         previewDismissComplete atIndex: Int
+    ) { }
+    
+    func pickerController(
+           _ pickerController: PhotoPickerController,
+           didSelectCollection assetCollection: PhotoAssetCollection
     ) { }
 }

@@ -101,5 +101,9 @@ extension PhotoPickerViewController: AlbumViewDelegate {
             animated: true
         )
         fetchPhotoAssets()
+        
+        if let pickerController = self.pickerController {
+            pickerController.pickerDelegate?.pickerController(pickerController, didSelectCollection: assetCollection)
+        }
     }
 }
