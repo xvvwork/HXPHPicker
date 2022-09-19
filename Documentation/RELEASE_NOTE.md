@@ -1,5 +1,20 @@
 # Release Notes
 
+## 1.4.3
+
+adaptation`iPhone 14 Pro / Pro Max`
+
+## 1.4.2
+
+### Resolved
+
+- Picker
+  - The problem of download failure when previewing `m3u8` format video, if the `m3u8` format video will not be downloaded
+  - After adding the file, adding it again will crash
+
+- Camera
+  - crash in some cases
+
 ## 1.4.1
 
 ### Optimizer
