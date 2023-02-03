@@ -249,6 +249,7 @@ extension PhotoPickerView: UICollectionViewDelegate {
             }
         }else {
             if let cell = getCell(for: photoAsset) as? PhotoPickerViewCell {
+                if self.manager.config.selectMode == .single { return }
                 cell.selectedAction(true)
             }
         }
